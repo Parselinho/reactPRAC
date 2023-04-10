@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import TodoList from './TodoList'
+import { Container, Row, Col, Card, Button, InputGroup, FormControl } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Input() {
   const [tasks, setTasks] = useState(() => {
@@ -44,48 +46,44 @@ function Input() {
   }, [tasks]);
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-6">
-          <div className="card mt-5">
-            <div className="card-body">
-              <h5 className="card-title text-center mb-4">Todo List</h5>
-              <div className="input-group mb-3">
-                <input
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col xs={12} sm={8} md={6}>
+          <Card className="shadow">
+            <Card.Body>
+              <Card.Title className="text-center mb-4">Todo List</Card.Title>
+              <InputGroup className="mb-3">
+                <FormControl
                   ref={inputRef}
                   type="text"
-                  className="form-control"
                   placeholder="Enter a task"
                 />
-                <button
-                  className="btn btn-outline-primary"
-                  type="button"
-                  onClick={handleAddTask}
-                >
+                <Button variant="outline-primary" onClick={handleAddTask}>
                   Add Task
-                </button>
-              </div>
-              <div className="text-center">
-                <button
-                  className="btn btn-danger mb-3"
-                  onClick={handleRemoveAllTasks}
-                >
+                </Button>
+              </InputGroup>
+              <div className="text-center mb-3">
+                <Button variant="danger" onClick={handleRemoveAllTasks}>
                   Remove All Tasks
-                </button>
+                </Button>
               </div>
-              <TodoList                 tasks={tasks}
+              <TodoList
+                tasks={tasks}
                 onRemoveTask={handleRemoveTask}
                 onEditTask={handleEditTask}
                 editedTask={editedTask}
                 editedTaskText={editedTaskText}
                 onEditTaskTextChange={(e) => setEditedTaskText(e.target.value)}
-                onUpdateTask={handleUpdateTask} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                onUpdateTask={handleUpdateTask}
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
+  
+
 
 export default Input;
