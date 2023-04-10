@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PhotoSearch from './PhotoSearch';
+import SearchInput from './SearchInput';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const App = () => {
+  const [searchQuery, setSearchQuery] = useState('explore');
+
   return (
-    <div>
-      <h1>Unsplash Photo Search</h1>
-      <PhotoSearch searchQuery="explore" />
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Unsplash Photo Search</h1>
+          <SearchInput setSearchQuery={setSearchQuery} />
+          <PhotoSearch searchQuery={searchQuery} />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
