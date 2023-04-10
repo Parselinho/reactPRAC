@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
+
 import AppTodo from './todoList/AppTodo';
 import Countries from './countries/Countries';
+import SportOddsApp from './sportodds/SportOddsApp';
+// import TrainingApp from './training/TrainingApp';
 
 function App() {
   const [navCollapsed, setNavCollapsed] = useState(true);
@@ -29,6 +32,12 @@ function App() {
             <li className="nav-item">
               <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/countries">Countries</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/sports">Sports Odds</NavLink>
+            </li>
+            {/* <li className="nav-item">
+              <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/trainingapp">Training Site</NavLink>
+            </li> */}
           </ul>
         </div>
       </nav>
@@ -37,6 +46,8 @@ function App() {
           <Route path="/" element={<h1>Welcome to my app!</h1>} />
           <Route path="/todolist" element={<AppTodo />} />
           <Route path="/countries" element={<Countries />} />
+          <Route path="/sports" element={<SportOddsApp />} />
+          {/* <Route path="/trainingapp" element={<TrainingApp />} /> */}
         </Routes>
       </div>
     </BrowserRouter>
