@@ -1,0 +1,18 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
+  .jumbotron {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+  }
+  
