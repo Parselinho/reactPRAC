@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, FormControl, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const SearchInput = ({ setSearchQuery }) => {
   const [inputValue, setInputValue] = useState('');
@@ -15,17 +17,23 @@ const SearchInput = ({ setSearchQuery }) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="searchInput">
-        <Form.Control
-          type="text"
-          value={inputValue}
-          onChange={handleChange}
-          placeholder="Search for photos"
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Search
-      </Button>
+      <Row>
+        <Col>
+          <Form.Group controlId="searchInput">
+            <FormControl
+              type="text"
+              value={inputValue}
+              onChange={handleChange}
+              placeholder="Search for photos"
+            />
+          </Form.Group>
+        </Col>
+        <Col xs="auto">
+          <Button variant="primary" type="submit" className="btn-lg heightFix">
+            Search
+          </Button>
+        </Col>
+      </Row>
     </Form>
   );
 };
