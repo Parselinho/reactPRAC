@@ -7,6 +7,7 @@ import Home from './Home';
 import AppTodo from './todoList/AppTodo';
 import Countries from './countries/Countries';
 import SportOddsApp from './sportodds/SportOddsApp';
+import PhotoApp from './gallery/PhotoApp';
 // import TrainingApp from './training/TrainingApp';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/todolist">Todo List</NavLink>
               <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/countries">Countries</NavLink>
               <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/sports">Sports Odds</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/gallery">Gallery</NavLink>
               {/* <NavLink className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} to="/trainingapp">Training Site</NavLink> */}
             </Nav>
           </Navbar.Collapse>
@@ -52,6 +54,7 @@ function App() {
           <Route path="/todolist" element={<AppTodo />} />
           <Route path="/countries" element={<Countries />} />
           <Route path="/sports" element={<SportOddsApp />} />
+          <Route path="/gallery" element={<PhotoApp />} />
           {/* <Route path="/trainingapp" element={<TrainingApp />} /> */}
         </Routes>
       </Container>
