@@ -24,3 +24,4 @@ yarn-error.log*
 
 # Custom entries
 sportsodds/Api.js
+gallery/UnsplashAPI.js
