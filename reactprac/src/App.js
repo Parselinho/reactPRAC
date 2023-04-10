@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
-import Home from './Home';
+import Home from './main/Home';
 import AppTodo from './todoList/AppTodo';
 import Countries from './countries/Countries';
 import SportOddsApp from './sportodds/SportOddsApp';
